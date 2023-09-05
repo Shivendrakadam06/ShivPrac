@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+	<bean id="student1" class="com.spring.FirstSpringCore.Student">
+	<property name="studentid" value="1"/>
+	<property name="studentname" value="Anaita"/>
+	<property name="score" value="90"/>
+	</bean>
+	
+	<bean id="student2" class="com.spring.FirstSpringCore.Student">
+	<property name="studentid" value="2"/>
+	<property name="studentname" value="Harshita"/>
+	<property name="score" value="90"/>
+	</bean>
+	
+	<bean id="student3" class="com.spring.FirstSpringCore.Student">
+	<property name="studentid" value="3"/>
+	<property name="studentname" value="shyam"/>
+	<property name="score" value="100"/>
+	</bean>
+	
+	<bean id="college1" class="com.spring.FirstSpringCore.College">
+	<property name="clgid" value="101"/>
+	<property name="clgname" value="IIST"/>
+	<property name="sl" >
+	<list>  
+		
+		
+		<ref bean="student1"/>
+		<ref bean="student2"/>
+		<ref bean="student3"/>
+		
+		
+
+	
+	
+	</list>  
+</property>  
+	</bean>
+	
+	<bean id="product1" class="com.spring.FirstSpringCore.Product">
+	<property name="productid" value="2"/>
+	<property name="productnane" value="onion"/>
+	<property name="price" value="30.0"/>
+	<property name="quantity" value="3"/>
+	</bean>
+	
+	<bean id="eobj" class="com.spring.second.Employee">
+	<property name="empid" value="1"/>
+	<property name="empname" value="shivendra"/>
+	<property name="salary" value="300000.0"/>
+	
+	</bean>
+	<bean id="department1" class="com.spring.second.Department" autowire="byName">
+	<property name="deptcode" value="101"/>
+	<property name="deptname" value="IT"/>
+<!-- 	<property name="eobj" ref="employee1"/> -->
+	
+	</bean>
+
+</beans>
